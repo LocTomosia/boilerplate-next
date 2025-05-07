@@ -1,0 +1,34 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+  "files.eol": "\n",
+  "json.format.enable": false,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[graphql]": {
+    "editor.formatOnSave": false
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#0590bb",
+    "activityBar.activeBorder": "#fda2e7",
+    "activityBar.background": "#0590bb",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#fda2e7",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#0590bb",
+    "statusBar.background": "#046a89",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#0590bb",
+    "statusBarItem.remoteBackground": "#046a89",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#046a89",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#046a8999",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "commandCenter.border": "#e7e7e799"
+  }
+}
