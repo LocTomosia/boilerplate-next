@@ -14,7 +14,6 @@ const MenuRouteIcons: Record<MenuRoute, ReactNode> = {
   "/home": <Home />,
 } as const;
 
-
 const usePermittedRoutes = () => {
   const permittedRoutes: { [key in MenuRoute]: boolean } = {
     "/home": true,
@@ -40,7 +39,7 @@ export const AppMenu: React.FC = () => {
               badgeContent={10}
               icon={MenuRouteIcons[route as MenuRoute]}
             >
-               Home
+              Home
             </AppMenuItem>
           ),
       )}

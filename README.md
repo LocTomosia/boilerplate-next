@@ -1,6 +1,8 @@
 # Next.js Boilerplate
 
-A modern, feature-rich Next.js boilerplate with TypeScript, React Query, Form Validation, and Internationalization support designed for building scalable web applications.
+A modern, feature-rich Next.js boilerplate with TypeScript, React Query, Form
+Validation, and Internationalization support designed for building scalable web
+applications.
 
 ![Next.js Boilerplate](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
@@ -9,7 +11,8 @@ A modern, feature-rich Next.js boilerplate with TypeScript, React Query, Form Va
 ## 🚀 Features
 
 - **Modern Stack**: Built with Next.js 15, React 19, and TypeScript
-- **Data Management**: Integrated TanStack React Query for efficient data fetching and caching
+- **Data Management**: Integrated TanStack React Query for efficient data
+  fetching and caching
 - **Form Handling**: Robust form validation with React Hook Form
 - **Internationalization**: Multi-language support with next-intl
 - **Styling**: MUI for utility-first styling
@@ -22,23 +25,30 @@ A modern, feature-rich Next.js boilerplate with TypeScript, React Query, Form Va
 ### Core Dependencies
 
 - [Next.js 15](https://nextjs.org/) - The React Framework for the Web
-- [React 19](https://reactjs.org/) - A JavaScript library for building user interfaces
-- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
-- [Next.js App Router](https://nextjs.org/docs/app) - New routing system for Next.js
+- [React 19](https://reactjs.org/) - A JavaScript library for building user
+  interfaces
+- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for
+  types
+- [Next.js App Router](https://nextjs.org/docs/app) - New routing system for
+  Next.js
 
 ### Data Management & Forms
 
-- [React Hook Form](https://react-hook-form.com/) - Performant, flexible and extensible forms
+- [React Hook Form](https://react-hook-form.com/) - Performant, flexible and
+  extensible forms
 - [Axios](https://axios-http.com/) - Promise based HTTP client
-- [js-cookie](https://github.com/js-cookie/js-cookie) - A simple, lightweight JavaScript API for handling cookies
+- [js-cookie](https://github.com/js-cookie/js-cookie) - A simple, lightweight
+  JavaScript API for handling cookies
 
 ### UI & Styling
 
-- [MUI](https://mui.com/) - React components for faster and easier web development
+- [MUI](https://mui.com/) - React components for faster and easier web
+  development
 
 ### Internationalization
 
-- [next-intl](https://next-intl-docs.vercel.app/) - Internationalization for Next.js
+- [next-intl](https://next-intl-docs.vercel.app/) - Internationalization for
+  Next.js
 
 ### Development Tools
 
@@ -172,30 +182,30 @@ This project follows specific naming conventions to improve code readability:
   // Good
   const onChangeDraggable = (event) => {
     /* ... */
-  }
+  };
   const onSubmit = (data) => {
     /* ... */
-  }
+  };
 
   // Avoid
   const changeDraggable = (event) => {
     /* ... */
-  }
+  };
   const submit = (data) => {
     /* ... */
-  }
+  };
   ```
 
 - Add the `is` prefix before variable names when the return value is boolean:
 
   ```typescript
   // Good
-  const isHiddenButton = status === 'completed'
-  const isLoading = query.isLoading
+  const isHiddenButton = status === "completed";
+  const isLoading = query.isLoading;
 
   // Avoid
-  const hiddenButton = status === 'completed'
-  const loading = query.isLoading
+  const hiddenButton = status === "completed";
+  const loading = query.isLoading;
   ```
 
 ### Linting
@@ -255,7 +265,8 @@ Closes #123
 
 ## Git Flow
 
-This project follows a simplified Git flow workflow to maintain code quality and streamline the development process.
+This project follows a simplified Git flow workflow to maintain code quality and
+streamline the development process.
 
 ```mermaid
 gitGraph
@@ -316,19 +327,22 @@ gitGraph
 - **develop**: Integration branch where features are combined and tested.
 - **feature/\***: Individual feature branches created from develop.
 - **hotfix/\***: Emergency fixes for production issues, branched from main.
-- **release/\***: Preparation for a new production release, branched from develop.
+- **release/\***: Preparation for a new production release, branched from
+  develop.
 
 ### Workflow
 
 1. **Feature Development**
 
-   - Create a feature branch from develop: `git checkout -b feature/new-feature develop`
+   - Create a feature branch from develop:
+     `git checkout -b feature/new-feature develop`
    - Develop the feature with regular commits
    - When complete, create a PR to merge back into develop
 
 2. **Release Preparation**
 
-   - Create a release branch when develop is ready for release: `git checkout -b release/v1.0.0 develop`
+   - Create a release branch when develop is ready for release:
+     `git checkout -b release/v1.0.0 develop`
    - Make only bug fixes and documentation updates in this branch
    - When ready, merge to both main and develop:
      ```
@@ -340,7 +354,8 @@ gitGraph
      ```
 
 3. **Hotfixes**
-   - For critical production bugs, create a hotfix branch from main: `git checkout -b hotfix/critical-bug main`
+   - For critical production bugs, create a hotfix branch from main:
+     `git checkout -b hotfix/critical-bug main`
    - Fix the issue
    - Merge back to both main and develop:
      ```
@@ -351,10 +366,15 @@ gitGraph
      git merge --no-ff hotfix/critical-bug
      ```
 
-This workflow helps maintain a clean repository history and provides a structured approach to development, testing, and releases.
+This workflow helps maintain a clean repository history and provides a
+structured approach to development, testing, and releases.
 
 ## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app is to use the
+[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+from the creators of Next.js.
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out the
+[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
+for more details.

@@ -1,5 +1,5 @@
 import { Box, Container } from "@mui/material";
-import { Loader } from "@/components/common/Loader";
+// import { Loader } from "@/components/common/Loader";
 // import { useViewerPermissionsLazyQuery } from "generated/graphql";
 import { useMobile, usePageTitle } from "@/hooks";
 import Head from "next/head";
@@ -56,8 +56,9 @@ const useAppLayout = () => {
   const [drawerOpen, setDrawerOpen] = useState(!isMobileSize);
   const onDrawerOpenClick = () => setDrawerOpen(true);
   const onDrawerCloseClick = () => setDrawerOpen(false);
-  const appBarWidth =
-    drawerOpen && !isMobileSize ? `calc(100% - ${DRAWER_WIDTH}px)` : "100%";
+  const appBarWidth = drawerOpen && !isMobileSize
+    ? `calc(100% - ${DRAWER_WIDTH}px)`
+    : "100%";
   const drawerWidth = drawerOpen ? DRAWER_WIDTH : 0;
   const drawerVariant: "temporary" | "persistent" = isMobileSize
     ? "temporary"
@@ -88,7 +89,7 @@ export const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     drawerVariant,
   } = useAppLayout();
 
-  const { authorized, onSignIn, loading, error } = useAuth();
+  const { authorized, onSignIn, error } = useAuth();
   const { pageTitle } = usePageTitle();
 
   // if (loading) {
@@ -100,39 +101,39 @@ export const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      {!authorized ? (
-        <SignInPage onSignIn={onSignIn} error={error} />
-      ) : (
-        <Box sx={{ display: "flex" }}>
-          <AppBar
-            width={appBarWidth}
-            ml={drawerWidth}
-            showIconButton={!drawerOpen}
-            onIconButtonClick={onDrawerOpenClick}
-          />
-          <AppDrawer
-            open={drawerOpen}
-            width={drawerWidth}
-            onIconButtonClick={onDrawerCloseClick}
-            variant={drawerVariant}
-          />
-          <Container
-            maxWidth="xl"
-            component="main"
-            sx={{
-              marginTop: APPBAR_HEIGHT,
-              paddingBottom: 4,
-              position: "relative",
-              maxWidth: `calc(95vw - ${
-                drawerVariant === "persistent" ? drawerWidth : 0
-              }px)`,
-              minHeight: `calc(100vh - ${APPBAR_HEIGHT})`,
-            }}
-          >
-            {children}
-          </Container>
-        </Box>
-      )}
+      {!authorized
+        ? <SignInPage onSignIn={onSignIn} error={error} />
+        : (
+          <Box sx={{ display: "flex" }}>
+            <AppBar
+              width={appBarWidth}
+              ml={drawerWidth}
+              showIconButton={!drawerOpen}
+              onIconButtonClick={onDrawerOpenClick}
+            />
+            <AppDrawer
+              open={drawerOpen}
+              width={drawerWidth}
+              onIconButtonClick={onDrawerCloseClick}
+              variant={drawerVariant}
+            />
+            <Container
+              maxWidth="xl"
+              component="main"
+              sx={{
+                marginTop: APPBAR_HEIGHT,
+                paddingBottom: 4,
+                position: "relative",
+                maxWidth: `calc(95vw - ${
+                  drawerVariant === "persistent" ? drawerWidth : 0
+                }px)`,
+                minHeight: `calc(100vh - ${APPBAR_HEIGHT})`,
+              }}
+            >
+              {children}
+            </Container>
+          </Box>
+        )}
     </>
   );
 };

@@ -62,28 +62,30 @@ export const UserMenuPresenter: React.FC<PresenterProps> = ({
   onClose,
 }) => (
   <div ref={anchorRef}>
-    {avatarOnly ? (
-      <IconButton onClick={onOpen}>
-        <Avatar
-          sx={{ width: 32, height: 32, bgcolor: grey[600] }}
-          variant="rounded"
-        >
-          <Person />
-        </Avatar>
-      </IconButton>
-    ) : (
-      <Chip
-        icon={<Person color="inherit" />}
-        label={`Loc Huynh`}
-        onClick={onOpen}
-        sx={{
-          color: "white",
-          borderColor: "white",
-          fontWeight: "bold",
-        }}
-        variant="outlined"
-      />
-    )}
+    {avatarOnly
+      ? (
+        <IconButton onClick={onOpen}>
+          <Avatar
+            sx={{ width: 32, height: 32, bgcolor: grey[600] }}
+            variant="rounded"
+          >
+            <Person />
+          </Avatar>
+        </IconButton>
+      )
+      : (
+        <Chip
+          icon={<Person color="inherit" />}
+          label={`Loc Huynh`}
+          onClick={onOpen}
+          sx={{
+            color: "white",
+            borderColor: "white",
+            fontWeight: "bold",
+          }}
+          variant="outlined"
+        />
+      )}
 
     <Popover
       anchorEl={anchorEl}

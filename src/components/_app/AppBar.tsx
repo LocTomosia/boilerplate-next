@@ -1,10 +1,10 @@
-import MenuIcon from '@mui/icons-material/Menu'
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar as MuiAppBar,
   Box,
+  IconButton,
   Toolbar,
   Typography,
-  IconButton,
 } from "@mui/material";
 import { useCurrentRoute } from "@/hooks";
 import { UserMenu } from "./UserMenu";
@@ -16,10 +16,13 @@ type Props = {
   onIconButtonClick: () => void;
 };
 
-export const AppBar: React.FC<Props> = ({ width, ml, showIconButton, onIconButtonClick }) => {
+export const AppBar: React.FC<Props> = (
+  { width, ml, showIconButton, onIconButtonClick },
+) => {
   const { currentRouteName } = useCurrentRoute();
-  const isDev =
-    process.env.DEPLOYMENT === "xdev" || process.env.DEPLOYMENT === "local";
+  // const isDev = process.env.DEPLOYMENT === "xdev" ||
+  //   process.env.DEPLOYMENT === "local";
+  const isDev = true;
 
   return (
     <MuiAppBar
@@ -42,11 +45,12 @@ export const AppBar: React.FC<Props> = ({ width, ml, showIconButton, onIconButto
       <Toolbar>
         {showIconButton && (
           <IconButton
-          color='inherit'
-          edge='start'
-          size='large'
-          sx={{ color: 'white' }}
-            onClick={onIconButtonClick}>
+            color="inherit"
+            edge="start"
+            size="large"
+            sx={{ color: "white" }}
+            onClick={onIconButtonClick}
+          >
             <MenuIcon />
           </IconButton>
         )}

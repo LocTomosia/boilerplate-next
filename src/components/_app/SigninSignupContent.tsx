@@ -1,34 +1,34 @@
-import { Box, Grid, Paper, useMediaQuery } from '@mui/material'
-import React, { ReactNode } from 'react'
-import { staticPath, theme } from '@/utils'
-import { EyeCatchImage } from '@/components/common/EyeCatchImage'
+import { Box, Grid, Paper, useMediaQuery } from "@mui/material";
+import React, { ReactNode } from "react";
+import { staticPath, theme } from "@/utils";
+import { EyeCatchImage } from "@/components/common/EyeCatchImage";
 
 export const SigninSignupContent = (props: { children: ReactNode }) => {
-  const isBreakpointUpMd = useMediaQuery(theme.breakpoints.up('md'))
+  const isBreakpointUpMd = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Grid
       container
-      direction='row'
+      direction="row"
       sx={{
         backgroundImage: {
           xs: `url("${staticPath.background_mobile_png}")`,
           md: `none`,
         },
-        backgroundSize: 'cover',
-        height: '100%',
-        minHeight: '100px',
+        backgroundSize: "cover",
+        height: "100%",
+        minHeight: "100px",
       }}
     >
-      <Grid size={{ md: 6, xs: 'auto' }}>
+      <Grid size={{ md: 6, xs: "auto" }}>
         <Box
           sx={{
-            [theme.breakpoints.down('md')]: {
-              height: 'auto',
-              width: '100vw',
+            [theme.breakpoints.down("md")]: {
+              height: "auto",
+              width: "100vw",
             },
-            [theme.breakpoints.up('md')]: {
-              height: '100vh',
+            [theme.breakpoints.up("md")]: {
+              height: "100vh",
             },
           }}
         >
@@ -43,13 +43,13 @@ export const SigninSignupContent = (props: { children: ReactNode }) => {
       <Grid size={{ md: 6, sm: 12, xs: 12 }}>
         <Box
           sx={{
-            backgroundColor: isBreakpointUpMd ? 'whitesmoke' : 'transparent',
-            [theme.breakpoints.up('md')]: {
-              height: '100vh',
-              overflow: 'auto',
+            backgroundColor: isBreakpointUpMd ? "whitesmoke" : "transparent",
+            [theme.breakpoints.up("md")]: {
+              height: "100vh",
+              overflow: "auto",
             },
-            [theme.breakpoints.down('sm')]: {
-              height: '100vh',
+            [theme.breakpoints.down("sm")]: {
+              height: "100vh",
             },
           }}
         >
@@ -69,7 +69,7 @@ export const SigninSignupContent = (props: { children: ReactNode }) => {
         </Box>
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
-const SIGNIN_ALT_TEXT = `Login`
+const SIGNIN_ALT_TEXT = `Login`;

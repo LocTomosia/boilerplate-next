@@ -4,6 +4,6 @@ export const useCurrentRoute = () => {
   const { pathname } = useRouter();
   return {
     currentRoute: pathname,
-    currentRouteName: 'Home',
+    currentRouteName: "Home",
   };
 };

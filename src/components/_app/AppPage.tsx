@@ -1,6 +1,6 @@
-import type { AppProps } from 'next/app'
-import { RecoilRoot } from 'recoil'
-import { AppLayout } from './AppLayout'
+import type { AppProps } from "next/app";
+import { RecoilRoot } from "recoil";
+import { AppLayout } from "./AppLayout";
 import { SnackbarProvider } from "@/context/SnackbarContext";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -12,5 +12,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </AppLayout>
       </RecoilRoot>
     </SnackbarProvider>
-  )
+  );
 }

@@ -1,7 +1,8 @@
-import { Badge, ListItemIcon, ListItemText } from "@mui/material";
+import { Badge, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { ListItemButton } from "@mui/material";
 import NextLink from "next/link";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 type Props = {
   path: string;
@@ -15,35 +16,48 @@ export const AppMenuItem: React.FC<Props> = ({
   children,
   badgeContent,
   icon,
-}) => (
-  <ListItemButton
-    component={NextLink}
-    href={path}
-    selected={window.location.pathname === path}
-    sx={{ height: 50 }}
-  >
-    <ListItemIcon sx={{ position: "relative", color: "primary.main" }}>
-      {badgeContent ? (
-        <Badge
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 25,
-          }}
-          variant="dot"
-          color="error"
-          badgeContent=""
-        />
-      ) : null}
-      {icon}
-    </ListItemIcon>
-    <ListItemText
-      primaryTypographyProps={{
-        fontSize: "small",
-        fontWeight: "bold",
-      }}
+}) => {
+  const router = useRouter();
+  const [isSelected, setIsSelected] = useState(false);
+
+  useEffect(() => {
+    setIsSelected(router.pathname === path);
+  }, [router.pathname, path]);
+
+  return (
+    <ListItemButton
+      component={NextLink}
+      href={path}
+      selected={isSelected}
+      sx={{ height: 50 }}
     >
-      {children}
-    </ListItemText>
-  </ListItemButton>
-);
+      <ListItemIcon sx={{ position: "relative", color: "primary.main" }}>
+        {badgeContent
+          ? (
+            <Badge
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 25,
+              }}
+              variant="dot"
+              color="error"
+              badgeContent=""
+            />
+          )
+          : null}
+        {icon}
+      </ListItemIcon>
+      <ListItemText
+        primary={
+          <Typography
+            fontSize="small"
+            fontWeight="bold"
+          >
+            {children}
+          </Typography>
+        }
+      />
+    </ListItemButton>
+  );
+};

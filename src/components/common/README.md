@@ -8,8 +8,8 @@ This directory contains shared components used across the entire application.
 
 A component should be placed in common only if it meets the following criteria:
 
-✅ Stateless – Does not rely on internal state. ✅ Context-independent – Does not
-depend on a specific context or page. ✅ Highly reusable – Used in multiple
+✅ Stateless – Does not rely on internal state. ✅ Context-independent – Does
+not depend on a specific context or page. ✅ Highly reusable – Used in multiple
 places across the application.
 
 ## Guidelines

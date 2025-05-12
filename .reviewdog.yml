@@ -1,0 +1,10 @@
+runner:
+  tsc:
+    cmd: tsc --noEmit --project tsconfig.json
+    format: tsc
+  deno:
+    cmd: deno lint -c deno.jsonc --json | jq -r '.diagnostics[] | .result = (.range.start.line|tostring) + " " + (.range.start.col|tostring) + " " + .filename + "\n(" + .code + ")\n" + .message + "\n" + .hint + "\n"  | .result'
+    errorformat:
+      - "%A%l %c %f"
+      - "%C%m"
+      - "%Z%.%#"
