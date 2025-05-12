@@ -8,7 +8,8 @@ This is a place for customized hooks. We assume the following hooks placement:
 
 Consider alternative methods if any of the following applies to you:
 
-- Pure functions that do not use React's built-in hooks internally (have no state or side effects)
+- Pure functions that do not use React's built-in hooks internally (have no
+  state or side effects)
 
 → Use [utils](../utils) without making it a hook using the use prefix.
 
