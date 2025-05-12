@@ -2,18 +2,18 @@
 
 A modern, feature-rich Next.js boilerplate with TypeScript, React Query, Form Validation, and Internationalization support designed for building scalable web applications.
 
-![Next.js Boilerplate](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js)
-![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
+![Next.js Boilerplate](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
 
 ## 🚀 Features
 
-- **Modern Stack**: Built with Next.js 14, React 18, and TypeScript
+- **Modern Stack**: Built with Next.js 15, React 19, and TypeScript
 - **Data Management**: Integrated TanStack React Query for efficient data fetching and caching
-- **Form Handling**: Robust form validation with React Hook Form and Zod
+- **Form Handling**: Robust form validation with React Hook Form
 - **Internationalization**: Multi-language support with next-intl
-- **Styling**: TailwindCSS for utility-first styling with SASS support
-- **Developer Experience**: ESLint, Prettier, Husky, and Conventional Commits
+- **Styling**: MUI for utility-first styling
+- **Developer Experience**: Deno, Deno fmt, Husky, and Conventional Commits
 - **Type Safety**: Full TypeScript support throughout the codebase
 - **Optimized Performance**: Built-in optimizations for production builds
 
@@ -21,25 +21,20 @@ A modern, feature-rich Next.js boilerplate with TypeScript, React Query, Form Va
 
 ### Core Dependencies
 
-- [Next.js 14](https://nextjs.org/) - The React Framework for the Web
-- [React 18](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [Next.js 15](https://nextjs.org/) - The React Framework for the Web
+- [React 19](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
 - [Next.js App Router](https://nextjs.org/docs/app) - New routing system for Next.js
 
 ### Data Management & Forms
 
-- [@tanstack/react-query](https://tanstack.com/query/latest) - Powerful data synchronization for React
 - [React Hook Form](https://react-hook-form.com/) - Performant, flexible and extensible forms
-- [Zod](https://github.com/colinhacks/zod) - TypeScript-first schema validation
 - [Axios](https://axios-http.com/) - Promise based HTTP client
 - [js-cookie](https://github.com/js-cookie/js-cookie) - A simple, lightweight JavaScript API for handling cookies
 
 ### UI & Styling
 
-- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [SASS](https://sass-lang.com/) - CSS preprocessor
-- [PostCSS](https://postcss.org/) - A tool for transforming CSS with JavaScript
-- [Autoprefixer](https://github.com/postcss/autoprefixer) - Parse CSS and add vendor prefixes
+- [MUI](https://mui.com/) - React components for faster and easier web development
 
 ### Internationalization
 
@@ -47,11 +42,9 @@ A modern, feature-rich Next.js boilerplate with TypeScript, React Query, Form Va
 
 ### Development Tools
 
-- [ESLint](https://eslint.org/) - Pluggable JavaScript linter
-- [Prettier](https://prettier.io/) - Opinionated code formatter
+- [Deno](https://deno.com/) - Pluggable JavaScript linter
+- [Deno fmt](https://deno.com/docs/tools/formatter) - Opinionated code formatter
 - [Husky](https://typicode.github.io/husky/) - Git hooks made easy
-- [Commitlint](https://commitlint.js.org/) - Lint commit messages
-  - [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint) - Conventional commit rules
 
 ## 🗂️ Project Structure
 
@@ -169,6 +162,42 @@ bun run start
 
 ## Code Quality
 
+### Naming Conventions
+
+This project follows specific naming conventions to improve code readability:
+
+- Add the `on` prefix before function names when the function handles an event:
+
+  ```typescript
+  // Good
+  const onChangeDraggable = (event) => {
+    /* ... */
+  }
+  const onSubmit = (data) => {
+    /* ... */
+  }
+
+  // Avoid
+  const changeDraggable = (event) => {
+    /* ... */
+  }
+  const submit = (data) => {
+    /* ... */
+  }
+  ```
+
+- Add the `is` prefix before variable names when the return value is boolean:
+
+  ```typescript
+  // Good
+  const isHiddenButton = status === 'completed'
+  const isLoading = query.isLoading
+
+  // Avoid
+  const hiddenButton = status === 'completed'
+  const loading = query.isLoading
+  ```
+
 ### Linting
 
 This project uses ESLint and Prettier for code quality:
@@ -188,7 +217,7 @@ npm run format
 
 This project uses conventional commits with the following commit types:
 
-- `feat`: A new feature
+- `feature`: A new feature
 - `fix`: A bug fix
 - `docs`: Documentation only changes
 - `style`: Changes that do not affect the meaning of the code
